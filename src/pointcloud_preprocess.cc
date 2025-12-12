@@ -42,6 +42,8 @@ void PointCloudPreprocess::AviaHandler(const livox_ros_driver::CustomMsg::ConstP
     cloud_full_.clear();
     int plsize = msg->point_num;
 
+    if(plsize <= 0) return;
+
     cloud_out_.reserve(plsize);
     cloud_full_.resize(plsize);
 
